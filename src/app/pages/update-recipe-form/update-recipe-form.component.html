@@ -1,0 +1,58 @@
+<h1 class="text-center pt-5">Update Recipe: {{recipeItem.id}} </h1>
+<form class="w-[27rem] p-6 rounded-lg shadow-md" (ngSubmit)="onSubmit()">
+
+    <div class="mb-4">
+
+            <mat-form-field class="w-full">
+              <mat-label class="text-gray-200">Title</mat-label>
+              <input matInput
+               placeholder="Ex. Pizza" value="recipeItem.title"
+                name="title"
+                [(ngModel)]="recipeItem.title"
+                class="py-2 px-3 text-gray-200 mt-1 focus:shadow-outline"
+                >
+            </mat-form-field>
+
+    </div>
+
+
+           <div class="mb-4">
+             <mat-form-field class="w-full">
+                <mat-label class="text-gray-200">Description</mat-label>
+                <input matInput
+                 placeholder="Recipe for pizza...." value="recipeItem.description"
+                  name="description"
+                  [(ngModel)]="recipeItem.description"
+                  class="py-2 px-3 text-gray-200 mt-1 focus:shadow-outline"
+                  >
+              </mat-form-field>
+              </div>
+              <div class="mb-4">
+             
+                <mat-radio-group [(ngModel)]="recipeItem.foodType"
+                   name="foodType" value="recipeItem.foodType"
+                    aria-label="Food Type">
+                    <mat-radio-button value="vegetarian">Vegetarian</mat-radio-button>
+                    <mat-radio-button value="non-vegetarian">Non-vegetarian</mat-radio-button>
+                  </mat-radio-group>
+              
+              </div>
+              <div class="mb-4">
+              <mat-form-field class="w-full">
+                <mat-label class="text-gray-200">Image</mat-label>
+                <input matInput
+                 placeholder="paste the url for your image...." value="recipeItem.image"
+                  name="image"
+                  [(ngModel)]="recipeItem.image"
+                  class="py-2 px-3 text-gray-200 mt-1 focus:shadow-outline"
+                  >
+              </mat-form-field>
+              </div>
+
+
+    <div>
+        <button mat-raised-button color="primary" type="submit">
+            Update
+        </button>
+    </div>
+</form>
